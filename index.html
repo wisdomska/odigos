@@ -171,17 +171,15 @@
 
   @media (max-width:1023px){
     .numeral{display:none}
+    /* image (with its numeral) comes before the copy in each route */
+    .route-flex .route-copy{order:2 !important}
+    .route-flex .route-img{order:1 !important;flex-basis:100%;overflow:visible}
     .numeral-onimg{
-      display:block;position:absolute;z-index:3;top:18px;left:22px;
+      display:block;position:absolute;z-index:3;top:-24px;left:-14px;
       font-family:Fraunces,Georgia,serif;font-weight:600;line-height:.9;
-      font-size:clamp(64px,15vw,130px);color:transparent;
-      -webkit-text-stroke:1.5px rgba(200,162,75,0.6);
-      text-shadow:0 2px 20px rgba(0,0,0,0.4);
+      font-size:clamp(120px,24vw,220px);color:transparent;
+      -webkit-text-stroke:1px rgba(200,162,75,0.35);
       pointer-events:none;user-select:none;
-    }
-    .route-img::after{
-      content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
-      background:linear-gradient(180deg, rgba(10,10,11,0.5) 0%, rgba(10,10,11,0) 40%);
     }
   }
   @media (max-width:639px){
@@ -191,7 +189,7 @@
     .cmp-row{padding:18px 0 !important}
     .cmp-row p{font-size:16.5px !important}
     .route-img{height:68vw !important;min-height:240px}
-    .numeral-onimg{font-size:76px;top:14px;left:18px}
+    .numeral-onimg{font-size:96px;top:-16px;left:-8px}
     .cta-row{gap:18px !important}
     .cta{display:block !important;width:100% !important;text-align:center;box-sizing:border-box}
     footer{flex-direction:column;text-align:center}
