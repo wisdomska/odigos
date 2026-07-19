@@ -43,14 +43,11 @@
   .nav-cta:hover{background:rgba(200,162,75,0.1);border-color:var(--gold);color:var(--gold)}
 
   /* hero */
-  #top{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:140px clamp(24px,6vw,72px) 11vh}
+  #top{position:relative;min-height:100svh}
   .hero-media{position:absolute;inset:0;overflow:hidden}
   .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .hero-fallback{position:absolute;inset:0;width:100%;height:100%;background:
-    radial-gradient(60% 60% at 75% 20%, rgba(200,162,75,0.18), transparent 60%),
-    linear-gradient(160deg,#17171a 0%,#0d0d0f 55%,#0A0A0B 100%)}
   .hero-scrim{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(10,10,11,0.62) 0%,rgba(10,10,11,0.4) 45%,#0A0A0B 98%)}
-  .hero-inner{position:relative;z-index:2;max-width:1020px;pointer-events:none}
+  .hero-inner{position:absolute;z-index:2;left:clamp(24px,6vw,72px);right:clamp(24px,6vw,72px);bottom:11vh;max-width:1020px;pointer-events:none}
   .kicker-row{display:flex;align-items:center;gap:16px}
   .kicker-dash{display:inline-block;width:36px;height:1px;background:var(--gold)}
   .kicker{margin:0;font-size:10.5px;letter-spacing:.42em;text-transform:uppercase;color:var(--muted);font-weight:500}
@@ -100,8 +97,7 @@
   .route-flex{position:relative;display:flex;flex-wrap:wrap;gap:clamp(36px,5vw,72px);align-items:flex-start}
   .route-copy{flex:1 1 460px;min-width:0}
   .route-img{flex:1 1 360px;min-width:280px;height:clamp(380px,44vw,560px);position:relative;overflow:hidden}
-  .route-img img,.route-img .img-fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .img-fallback{background:radial-gradient(60% 60% at 30% 25%, rgba(200,162,75,0.14), transparent 60%), linear-gradient(160deg,#151517 0%,#0d0d0f 60%,#0A0A0B 100%)}
+  .route-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .route-eyebrow{position:relative;display:flex;align-items:center;gap:14px}
   .route-eyebrow p{margin:0;font-size:10.5px;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);font-weight:500}
   h2.route-title{margin:20px 0 0;font-family:Fraunces,Georgia,serif;font-weight:340;font-size:clamp(30px,3.6vw,46px);line-height:1.1;color:var(--cream)}
@@ -146,7 +142,8 @@
 
   /* booking */
   #book{position:relative;overflow:hidden;padding:clamp(120px,15vw,200px) clamp(24px,6vw,72px);text-align:center;scroll-margin-top:70px;border-top:1px solid var(--hair)}
-  .book-media{position:absolute;inset:0;pointer-events:none;background:radial-gradient(70% 70% at 50% 40%, rgba(200,162,75,0.10), transparent 65%), linear-gradient(180deg,#111113 0%,#0A0A0B 70%)}
+  .book-media{position:absolute;inset:0;pointer-events:none}
+  .book-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .book-scrim{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,#0A0A0B 0%,rgba(10,10,11,0.55) 30%,rgba(10,10,11,0.55) 70%,#0A0A0B 100%)}
   .book-rings{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(88vw,720px);aspect-ratio:1/1;border:1px solid rgba(200,162,75,0.10);border-radius:50%;pointer-events:none;display:flex;align-items:center;justify-content:center}
   .book-rings .r2{width:72%;height:72%;border:1px solid rgba(200,162,75,0.08);border-radius:50%;display:flex;align-items:center;justify-content:center}
@@ -201,7 +198,7 @@
 
 <section id="top">
   <div class="hero-media">
-    <div class="hero-fallback"></div>
+    <img class="hero-img" src="images/hero.png" alt="Chauffeur's hand on the wheel, night drive" loading="eager">
     <div class="hero-scrim"></div>
   </div>
   <div class="hero-inner">
@@ -209,8 +206,8 @@
       <span class="kicker-dash"></span>
       <p class="kicker">Private Chauffeur Services · Accra, Ghana</p>
     </div>
-    <h1 class="hero-title rise rise-1">You're not paying for a driver.<br>You're paying for a <em>private chauffeur</em>.</h1>
-    <p class="hero-sub rise rise-2">Odigos chauffeurs drive you in your own car — comfort, status, safety and convenience, on your schedule.</p>
+    <h1 class="hero-title rise rise-1">We drive, <em>you arrive.</em></h1>
+    <p class="hero-sub rise rise-2">Experience the ultimate standard in private chauffeuring, driven right from your own car.</p>
     <div class="cta-row rise rise-3">
       <a class="cta cta-mag" id="mag1" href="https://wa.me/+233596505599">Book via WhatsApp</a>
       <a class="explore-link" href="#idea">Explore the three routes ↓</a>
@@ -287,14 +284,14 @@
             <p class="desc">A patient pace, door-to-car support, and peace of mind for the families of elderly clients.</p>
           </div>
         </div>
-        <div class="route-img"><div class="img-fallback"></div></div>
+        <div class="route-img"><img src="images/route-core.png" alt="Chauffeur's gloved hand at the gear shift" loading="lazy"></div>
       </div>
     </article>
 
     <article class="route">
       <div class="numeral left" id="num2">02</div>
       <div class="route-flex">
-        <div class="route-img" style="order:0"><div class="img-fallback"></div></div>
+        <div class="route-img" style="order:0"><img src="images/route-wetour.png" alt="Chauffeur opening the car door handle" loading="lazy"></div>
         <div class="route-copy" style="order:1">
           <div class="route-eyebrow">
             <span class="anchor" id="aWetour"></span>
@@ -332,7 +329,7 @@
             <div class="feature-row"><span class="feature-dot"></span><p>Always on time</p></div>
           </div>
         </div>
-        <div class="route-img"><div class="img-fallback"></div></div>
+        <div class="route-img"><img src="images/route-kiddie.png" alt="Chauffeur fastening the seatbelt" loading="lazy"></div>
       </div>
     </article>
   </div>
@@ -357,7 +354,7 @@
 </section>
 
 <section id="book">
-  <div class="book-media"></div>
+  <div class="book-media"><img src="images/booking.png" alt="Chauffeur opening the rear door" loading="lazy"></div>
   <div class="book-scrim"></div>
   <div class="book-rings" aria-hidden="true"><div class="r2"><div class="r3"></div></div></div>
   <div class="book-inner">
